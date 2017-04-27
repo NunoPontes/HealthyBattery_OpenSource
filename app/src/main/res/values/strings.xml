@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">Healthy Battery</string>
+    <string name="definitions">Definitions</string>
+    <string name="main">Main</string>
+    <string name="temperature">Temperature:</string>
+    <string name="status">Status:</string>
+    <string name="c" translatable="false">ºC</string>
+    <string name="f" translatable="false">F</string>
+    <string name="plug">Plug:</string>
+    <string name="sound_notification">Sound Notification:</string>
+    <string name="one_play">One play</string>
+    <string name="battery_level">Battery Level:</string>
+    <string name="loop">Loop</string>
+    <string name="health">Health:</string>
+    <string name="technology">Technology:</string>
+    <string name="voltage">Voltage:</string>
+    <string name="notification_when_battery_is">Notification when battery is:</string>
+    <string name="vibrate">Vibrate</string>
+    <string name="charging">Charging</string>
+    <string name="discharging">Discharching</string>
+    <string name="full">Full</string>
+    <string name="not_charging">Not Charging</string>
+    <string name="unknown">Unknown</string>
+    <string name="_unknown">...unknown!</string>
+    <string name="plugged_ac">AC Plugged</string>
+    <string name="plugged_usb">USB Plugged</string>
+    <string name="plugged_wireless">Wireless Plugged</string>
+    <string name="health_cold">Cold Health</string>
+    <string name="health_dead">Dead Health</string>
+    <string name="health_good">Good Health</string>
+    <string name="health_over_voltage">Over Voltage Health</string>
+    <string name="health_overheat">Overheat Health</string>
+    <string name="health_unknown">Unknown</string>
+    <string name="health_unspecified_failure">Unspecified Failure</string>
+    <string name="error">Error</string>
+    <string name="charge_battery">Charge Battery</string>
+    <string name="warning">Warning</string>
+    <string name="disconnect_charger">Disconnect Charger</string>
+    <string name="temperature_high">Battery Temperature is too high</string>
+    <string name="definitions_saved">Definitions saved</string>
+    <string name="reset_values">Reset Values</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="every_data_will_be_deleted">Every data will be deleted!!</string>
+    <string name="tips">Tips</string>
+    <string name="apply">Apply</string>
+    <string name="temperature2">Temperature</string>
+    <string name="soundnotification">Sound Notification</string>
+    <string name="app_version">App version</string>
+
+    <!--TIPS-->
+    <string name="tipnumber1" translatable="false">1:</string>
+    <string name="tipnumber2" translatable="false">2:</string>
+    <string name="tipnumber3" translatable="false">3:</string>
+    <string name="tipnumber4" translatable="false">4:</string>
+    <string name="tipnumber5" translatable="false">5:</string>
+    <string name="tipnumber6" translatable="false">6:</string>
+    <string name="tip1">Don\'t charge your smartphone overnight</string>
+    <string name="tip2">Don\'t use your smartphone while charging</string>
+    <string name="tip3">Don\'t charge your smartphone on your computer</string>
+    <string name="tip4">Always keep your battery between 30% and 80%</string>
+    <string name="tip5">Keep your phone between -20ºC (-4F) and 45ºC (113F)</string>
+    <string name="tip6">Don\'t use other brands charger</string>
+</resources>

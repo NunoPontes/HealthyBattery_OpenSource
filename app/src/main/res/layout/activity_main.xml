@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/dark_grey_background">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        app:layout_collapseMode="parallax"
+        tools:context="com.keepitsimplestudios.healthybattery.MainActivity.MainActivity">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/app_bar_height"
+            android:theme="@style/AppTheme">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/main.collapsing"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                android:theme="@style/AppToolbar"
+                app:contentScrim="?attr/colorPrimary"
+                app:expandedTitleMarginEnd="64dp"
+                app:expandedTitleMarginStart="48dp"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+                <!--<me.henrytao.smoothappbarlayout.SmoothCollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|clip_vertical"
+                    android:minHeight="?attr/actionBarSize"
+                    app:sctl_avatar_id="@+id/avatar"
+                    app:sctl_collapsed_offsetX="0dp"
+                    app:sctl_collapsed_offsetY="-40dp"
+                    app:sctl_collapsed_titleTextSize="16dp"
+                    app:sctl_expanded_titleTextSize="32dp"
+                    app:sctl_title_id="@+id/title">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">-->
+
+                <!--<ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/ic_launcher"/>-->
+
+                <!--<TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:paddingLeft="10dp"
+                    android:text="@string/app_name"
+                    android:textColor="@color/cardview_light_background"/>
+
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_gravity="bottom"
+                    app:tabSelectedTextColor="@color/primary_light"
+                    app:tabTextColor="@color/primary_text"/>
+            </LinearLayout>
+
+        </me.henrytao.smoothappbarlayout.SmoothCollapsingToolbarLayout>-->
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/facDefinitions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_settings"
+            android:tint="@color/white"
+            app:layout_anchor="@id/app_bar"
+            app:layout_anchorGravity="bottom|right|end"/>
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/nsvScroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingTop="2dp"
+            android:paddingBottom="20dp"
+
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp">
+
+                <TableLayout
+                    android:id="@+id/tbTable"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:stretchColumns="1">
+
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="bottom">
+
+                        <TextView
+                            android:id="@+id/tvStatus1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/status"/>
+
+                        <TextView
+                            android:id="@+id/tvStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:textAlignment="viewEnd"
+                            android:textAppearance="?android:attr/textAppearanceSmall"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="bottom">
+
+                        <TextView
+                            android:id="@+id/tvPlug1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/plug"
+                            android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+                        <TextView
+                            android:id="@+id/tvPlug"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:textAlignment="viewEnd"
+                            android:textAppearance="?android:attr/textAppearanceSmall"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="bottom">
+
+                        <TextView
+                            android:id="@+id/tvBatteryLevel1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/battery_level"
+                            android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+                        <TextView
+                            android:id="@+id/tvBatteryLevel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:textAlignment="viewEnd"
+                            android:textAppearance="?android:attr/textAppearanceSmall"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="bottom">
+
+                        <TextView
+                            android:id="@+id/tvHealth1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/health"
+                            android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+                        <TextView
+                            android:id="@+id/tvHealth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:textAlignment="viewEnd"
+                            android:textAppearance="?android:attr/textAppearanceSmall"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="bottom">
+
+                        <TextView
+                            android:id="@+id/tvTechnology1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/technology"
+                            android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+                        <TextView
+                            android:id="@+id/tvTechnology"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:textAlignment="viewEnd"
+                            android:textAppearance="?android:attr/textAppearanceSmall"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="bottom">
+
+                        <TextView
+                            android:id="@+id/tvTemperature1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/temperature"
+                            android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+                        <TextView
+                            android:id="@+id/tvTemperature"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:textAlignment="viewEnd"
+                            android:textAppearance="?android:attr/textAppearanceSmall"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="bottom">
+
+                        <TextView
+                            android:id="@+id/tvVoltage1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/voltage"
+                            android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+                        <TextView
+                            android:id="@+id/tvVoltage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:textAlignment="viewEnd"
+                            android:textAppearance="?android:attr/textAppearanceSmall"/>
+                    </TableRow>
+
+                </TableLayout>
+
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/graphBattery"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dip"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/tbTable"/>
+
+                <Button
+                    android:id="@+id/btnResetData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@id/graphBattery"
+                    android:background="@color/accent"
+                    android:text="@string/reset_values"
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="25dp"/>
+            </RelativeLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>
+

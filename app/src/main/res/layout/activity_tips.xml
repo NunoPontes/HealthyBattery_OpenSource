@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_grey_background"
+    tools:context="com.keepitsimplestudios.healthybattery.Tips.TipsActivity">
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:id="@+id/layout_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="@color/dark_grey_background"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextStyle6DarkTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/tips"/>
+
+            <include layout="@layout/layout_light_grey_line"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_grey_background"
+                android:padding="15dp">
+
+                <TextView
+                    android:id="@+id/tvTips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    style="@style/TextStyleTitleLeftNoPadding"
+                    />
+
+            </RelativeLayout>
+
+
+            <include layout="@layout/layout_light_grey_line"/>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#8BC34A</color>
+    <color name="primary_dark">#689f38</color>
+    <color name="primary_light">#DCEDC8</color>
+    <color name="accent">#4caf50</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="icons">#212121</color>
+    <color name="divider">#BDBDBD</color>
+
+    <color name="white">#ffffff</color>
+
+    <!--Fundo cinza escuro - separação com ou sem titulo-->
+    <item name="dark_grey_background" type="color">#efefec</item>
+    <item name="dark_grey_text" type="color">#777777</item>
+    <item name="dark_grey_line" type="color">#DDDDDD</item>
+
+    <!--Fundo cinza claro - para conteudo-->
+    <item name="light_grey_background" type="color">#FCFCFC</item>
+    <item name="light_grey_text" type="color">#373737</item>
+    <item name="light_grey_text_title" type="color">#979797</item>
+    <item name="light_grey_text_placeholder" type="color">#888888</item>
+    <item name="light_grey_line" type="color">#dddddd</item>
+
+    <item name="general_dark_grey" type="color">#262626</item>
+    <item name="general_button" type="color">#DDDDDD</item>
+</resources>

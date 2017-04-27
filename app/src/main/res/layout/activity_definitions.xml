@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/dark_grey_background"
+                tools:context="com.keepitsimplestudios.healthybattery.Definitions.Definitions">
+
+<!--TODO:em telemoveis pequenos a primeira string pode-se sobrepor a segundo, caso da a beteria...-->
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:id="@+id/layout_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="@color/dark_grey_background"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextStyle6DarkTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/definitions"/>
+
+            <include layout="@layout/layout_light_grey_line"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_grey_background"
+                android:padding="15dp">
+
+                <TextView
+                    style="@style/TextStyle6DarkTitleLeftNoPadding"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temperature2"/>
+
+                <TextView
+                    android:id="@+id/tv_settings_temperature"
+                    style="@style/TextStyleTitleRightNoPadding"
+                    android:text="@string/c"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_grey_background"
+                android:padding="15dp">
+
+                <TextView
+                    style="@style/TextStyle6DarkTitleLeftNoPadding"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/soundnotification"/>
+
+                <TextView
+                    android:id="@+id/tv_settings_sound"
+                    style="@style/TextStyleTitleRightNoPadding"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:text="@string/loop"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_grey_background"
+                android:padding="15dp">
+
+                <TextView
+                    style="@style/TextStyle6DarkTitleLeftNoPadding"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/notification_when_battery_is"/>
+
+                <TextView
+                    android:id="@+id/tv_settings_notification"
+                    style="@style/TextStyleTitleRightNoPadding"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30"/>
+
+            </RelativeLayout>
+
+
+            <include layout="@layout/layout_light_grey_line"/>
+
+            <include layout="@layout/layout_separator_grey"/>
+
+            <include layout="@layout/layout_light_grey_line"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_grey_background"
+                android:padding="15dp">
+
+                <TextView
+                    style="@style/TextStyle6DarkTitleLeftNoPadding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/vibrate"/>
+
+                <Switch
+                    android:id="@+id/sVibrate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:checked="true"
+                    android:enabled="true"/>
+            </RelativeLayout>
+
+            <include layout="@layout/layout_light_grey_line"/>
+
+            <include layout="@layout/layout_separator_grey"/>
+
+            <include layout="@layout/layout_light_grey_line"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_grey_background"
+                android:padding="15dp">
+
+                <TextView
+                    style="@style/TextStyle6DarkTitleLeftNoPadding"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_version"/>
+
+                <TextView
+                    android:id="@+id/tv_settings_app_version"
+                    style="@style/TextStyleTitleRightNoPadding"
+                    android:text="v1.0.0"
+                    />
+
+            </RelativeLayout>
+
+            <include layout="@layout/layout_light_grey_line"/>
+
+            <include layout="@layout/layout_separator_grey"/>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <!--<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:id="@+id/rgSound"
+                android:layout_alignTop="@+id/tvSound1"
+                android:layout_toRightOf="@+id/tvSound1"
+                android:layout_toEndOf="@+id/tvSound1"
+                android:orientation="horizontal"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/one_play"
+                    android:id="@+id/rbOnePlay"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/loop"
+                    android:id="@+id/rbLoop"
+                    android:checked="false" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/temperature"
+                android:id="@+id/tvTemperature1"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"/>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:orientation="horizontal"
+                android:id="@+id/rgTemperature"
+                android:layout_alignTop="@+id/tvTemperature1"
+                android:layout_toRightOf="@+id/tvTemperature1"
+                android:layout_toEndOf="@+id/tvTemperature1"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/c"
+                    android:id="@+id/rbC"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f"
+                    android:id="@+id/rbF"
+                    android:checked="false" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/sound_notification"
+                android:id="@+id/tvSound1"
+                android:layout_below="@+id/rgTemperature"
+                android:layout_alignLeft="@+id/tvTemperature1"
+                android:layout_alignStart="@+id/tvTemperature1"/>
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vibrate"
+                android:id="@+id/sVibrate"
+
+                android:checked="false"
+                android:layout_below="@+id/rgSound"
+                android:layout_alignLeft="@+id/tvSound1"
+                android:layout_alignStart="@+id/tvSound1"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/notification_when_battery_is"
+                android:id="@+id/textView"
+                android:layout_below="@+id/sVibrate"
+                android:layout_alignLeft="@+id/sVibrate"
+                android:layout_alignStart="@+id/sVibrate"
+                android:layout_marginEnd="10dp"/>
+
+            <NumberPicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/npBattery"
+                android:orientation="vertical"
+                android:focusableInTouchMode="false"
+                android:descendantFocusability="blocksDescendants"
+                android:layout_alignBaseline="@+id/textView"
+                android:layout_alignBottom="@+id/textView"
+                android:layout_toRightOf="@+id/textView"
+                android:layout_toEndOf="@+id/textView"/>
+        </RelativeLayout>
+    </ScrollView>-->
+
+</RelativeLayout>

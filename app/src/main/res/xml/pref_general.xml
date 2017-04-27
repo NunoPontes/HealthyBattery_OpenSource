@@ -1,0 +1,16 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:title="Switch preference"
+        android:key="switch_preference_1"/>
+    <SwitchPreference
+        android:defaultValue="false"
+        android:title="Switch preference"
+        android:key="switch_preference_2"/>
+    <SwitchPreference
+        android:defaultValue="false"
+        android:title="Switch preference"
+        android:key="switch_preference_3"/>
+</PreferenceScreen>
