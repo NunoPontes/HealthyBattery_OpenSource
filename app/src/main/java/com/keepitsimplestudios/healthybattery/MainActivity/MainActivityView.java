@@ -7,8 +7,10 @@ import android.media.MediaPlayer;
 
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
+import com.keepitsimplestudios.healthybattery.Utils.CVSFile;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by nunop on 27/01/2017.
@@ -120,6 +122,8 @@ interface MainActivityView {
     void addSeriesGraphView(LineGraphSeries<DataPoint> series);
 
     int getListRecordsSize();
+
+    List<CVSFile> getListRecords();
 
     int getListRecordsBatteryLevel(int index);
 

@@ -480,6 +480,11 @@ public class MainActivity extends AppCompatActivity implements MainActivityView 
     }
 
     @Override
+    public List<CVSFile> getListRecords() {
+        return listRecords;
+    }
+
+    @Override
     public int getListRecordsBatteryLevel(int index) {
         return listRecords.get(index).getBatteryLevel();
     }

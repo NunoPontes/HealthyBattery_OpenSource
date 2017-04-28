@@ -16,6 +16,7 @@ import com.keepitsimplestudios.healthybattery.HealthyBatteryApplication;
 import com.keepitsimplestudios.healthybattery.HealthyBatteryService;
 import com.keepitsimplestudios.healthybattery.R;
 import com.keepitsimplestudios.healthybattery.Util;
+import com.keepitsimplestudios.healthybattery.Utils.CVSFile;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -26,7 +27,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import static com.keepitsimplestudios.healthybattery.Util.MAXBATTERY;
 import static com.keepitsimplestudios.healthybattery.Util.MAXTEMPERATURE;
@@ -367,16 +370,28 @@ public class MainActivityPresenterImpl implements MainActivityPresenter {
         new Thread(new Runnable() {
             public void run() {
 
+                int auxMax = MAX_GRAPH_POINTS;
                 //SE NÃO CONSEGUIR OBTER DO ARMAZENAMENTO INTERNO VÊ NO EXTERNO
                 if (getDataFromCSV(mView.getActivity().getFilesDir().getAbsolutePath() + "/" + Util.FILE_PATH_INTERNAL)) {
                     LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>();
                     /*for (int i = 0; i < mView.getListRecordsSize(); i++) {
                         series.appendData(new DataPoint(i, mView.getListRecordsBatteryLevel(i)), true, MAX_GRAPH_POINTS);
                     }*/
-                    for(int i = 0; i< MAX_GRAPH_POINTS; i++){
-                        //Vai buscar os MAX_GRAPH_POINTS últimos da lista
-                        series.appendData(new DataPoint(i, mView.getListRecordsBatteryLevel(mView.getListRecordsSize() - (MAX_GRAPH_POINTS + i))), true, MAX_GRAPH_POINTS);
+
+                    if(mView.getListRecordsSize() < auxMax)
+                    {
+                        auxMax = mView.getListRecordsSize();
                     }
+
+                    List<CVSFile> auxListLastElements = new ArrayList<>();
+                    auxListLastElements = mView.getListRecords().subList(mView.getListRecordsSize() - auxMax, mView.getListRecordsSize());
+
+
+                    for(int i = 0; i< auxMax; i++){
+                        //Vai buscar os MAX_GRAPH_POINTS últimos da lista
+                        series.appendData(new DataPoint(i, auxListLastElements.get(i).getBatteryLevel()/*mView.getListRecordsBatteryLevel(mView.getListRecordsSize() - (MAX_GRAPH_POINTS + i))*/), true, MAX_GRAPH_POINTS);
+                    }
+
 
                     mView.addSeriesGraphView(series);
 
