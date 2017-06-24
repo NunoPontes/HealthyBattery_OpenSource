@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.media.MediaPlayer;
 import android.os.BatteryManager;
+import android.widget.Toast;
 
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
@@ -261,6 +262,30 @@ public class MainActivityPresenterImpl implements MainActivityPresenter {
         mView.setVoltageText(Integer.toString(mView.getVoltage()) + "mV");
     }
 
+    private void updateBatteryCapacity() {
+        Object mPowerProfile_ = null;
+
+        final String POWER_PROFILE_CLASS = "com.android.internal.os.PowerProfile";
+
+        try {
+            mPowerProfile_ = Class.forName(POWER_PROFILE_CLASS)
+                    .getConstructor(Context.class).newInstance(mView.getContext());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            double batteryCapacity = (Double) Class
+                    .forName(POWER_PROFILE_CLASS)
+                    .getMethod("getAveragePower", java.lang.String.class)
+                    .invoke(mPowerProfile_, "battery.capacity");
+            mView.setBatteryCapacityText(Double.toString(batteryCapacity) + "mAh");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     private void update() {
         updateStatus();
         updateChargePlug();
@@ -269,6 +294,7 @@ public class MainActivityPresenterImpl implements MainActivityPresenter {
         updateTechnology();
         updateTemperature();
         updateVoltage();
+        updateBatteryCapacity();
     }
 
     private void stopSound() {

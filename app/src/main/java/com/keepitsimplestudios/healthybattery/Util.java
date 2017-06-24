@@ -44,11 +44,11 @@ public final class Util {
             stream.close();
         } catch (UnsupportedEncodingException e) {
             if (BuildConfig.DEBUG) {
-                Log.w(TAG, "UnsupportedEncodingException", e);
+                //Log.w(TAG, "UnsupportedEncodingException", e);
             }
         } catch (IOException e) {
             if (BuildConfig.DEBUG) {
-                Log.w(TAG, "IOException", e);
+                //Log.w(TAG, "IOException", e);
             }
         }
         return builder.toString();

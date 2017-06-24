@@ -38,6 +38,7 @@ interface MainActivityView {
 
     void setVoltageText(String text);
 
+    void setBatteryCapacityText(String text);
 
     int getStatus();
 

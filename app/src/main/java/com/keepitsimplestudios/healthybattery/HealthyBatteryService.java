@@ -54,7 +54,7 @@ public class HealthyBatteryService extends IntentService {
     @Override
     protected final void onHandleIntent(Intent intent) {
         if (BuildConfig.DEBUG) {
-            Log.d(TAG, "onHandleIntent in action = " + intent.getAction());
+            //Log.d(TAG, "onHandleIntent in action = " + intent.getAction());
         }
 
         if (ACTION_START.equals(intent.getAction())) {
@@ -65,7 +65,7 @@ public class HealthyBatteryService extends IntentService {
             final long monitorPeriod = ((HealthyBatteryApplication) getApplication())
                     .getMonitorPeriod();
             if (BuildConfig.DEBUG) {
-                Log.d(TAG, "Monitoring period retrieved. " + monitorPeriod);
+                //Log.d(TAG, "Monitoring period retrieved. " + monitorPeriod);
             }
             startTimer(monitorPeriod);
             //startNotification();
@@ -144,7 +144,7 @@ public class HealthyBatteryService extends IntentService {
         final long period = intent.getLongExtra(EXTRA_PERIOD,
                 Util.TIMEOUT_SERVICE);
         if (BuildConfig.DEBUG) {
-            Log.d(TAG, "setMonitoringPeriod period = " + period);
+            //Log.d(TAG, "setMonitoringPeriod period = " + period);
         }
         ((HealthyBatteryApplication) getApplication())
                 .setMonitoringPeriod(period);
@@ -157,7 +157,7 @@ public class HealthyBatteryService extends IntentService {
         final int batteryLevel = Util
                 .getCurrentBatteryLevel(getApplicationContext());
         if (BuildConfig.DEBUG) {
-            Log.d(TAG, "recordBatteryState batteryLevel = " + batteryLevel);
+            //Log.d(TAG, "recordBatteryState batteryLevel = " + batteryLevel);
         }
         File file = new File(path);
         try {
@@ -179,7 +179,7 @@ public class HealthyBatteryService extends IntentService {
 
         } catch (IOException e) {
             if (BuildConfig.DEBUG) {
-                Log.w(TAG, "IOException", e);
+                //Log.w(TAG, "IOException", e);
             }
         }
     }
@@ -189,7 +189,7 @@ public class HealthyBatteryService extends IntentService {
         final int batteryLevel = Util
                 .getCurrentBatteryLevel(getApplicationContext());
         if (BuildConfig.DEBUG) {
-            Log.d(TAG, "recordBatteryState batteryLevel = " + batteryLevel);
+            //Log.d(TAG, "recordBatteryState batteryLevel = " + batteryLevel);
         }
         File file = new File(path);
         file.setWritable(true, false);
@@ -218,14 +218,14 @@ public class HealthyBatteryService extends IntentService {
             fOut.close();
         } catch (IOException e) {
             if (BuildConfig.DEBUG) {
-                Log.w(TAG, "IOException", e);
+                //Log.w(TAG, "IOException", e);
             }
         }
     }
 
     private void startTimer(final long period) {
 
-        Log.d(TAG, "startTimer called.");
+        //Log.d(TAG, "startTimer called.");
         PendingIntent operation = getPendingIntentForAlarmManager();
 
         // set the pending intent to AlarmManager with repeating mode.
@@ -264,7 +264,7 @@ public class HealthyBatteryService extends IntentService {
     }
 */
     private void stopTimer() {
-        Log.d(TAG, "stopTimer called.");
+        //Log.d(TAG, "stopTimer called.");
         PendingIntent operation = getPendingIntentForAlarmManager();
 
         AlarmManager manager = (AlarmManager) this
@@ -273,7 +273,7 @@ public class HealthyBatteryService extends IntentService {
     }
 
     private void stopNotification() {
-        Log.d(TAG, "stopNotification called");
+        //Log.d(TAG, "stopNotification called");
         NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         manager.cancel(NOTIFICATION_ID);
     }

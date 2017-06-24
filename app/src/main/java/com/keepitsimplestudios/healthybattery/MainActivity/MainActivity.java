@@ -40,10 +40,15 @@ import static android.R.attr.permission;
 
 
 
-//TODO:ocultar cenas do firebase e do fabric qd se puser open-source
+
 //TODO: layout tablets
 //TODO: botão fixo
-//TODO: fazer com que ao ler o ficheiro leia apenas os ultimos, ao não ser que dê para fazer scroll no grafico
+//TODO: tempo estimado de bateria
+//TODO: capacidade da bateria em mha
+//TODO: desenhar grafico assim q se tenham dados
+//TODO: erro crashlytics
+//TODO:proguard
+//Done: fazer com que ao ler o ficheiro leia apenas os ultimos, ao não ser que dê para fazer scroll no grafico
 
 //Note: está-se apenas a usar armazenamento interno, apesar de para externo tb estar implementado
 //(à excepção de ir buscar dados ao externo)
@@ -67,6 +72,8 @@ public class MainActivity extends AppCompatActivity implements MainActivityView 
     TextView tvTemperature;
     @BindView(R.id.tvVoltage)
     TextView tvVoltage;
+    @BindView(R.id.tvBatteryCapacityMAH)
+    TextView tvBatteryCapacityMAH;
     @BindView(R.id.graphBattery)
     GraphView gvBatteryUsage;
     @BindView(R.id.facDefinitions)
@@ -87,7 +94,6 @@ public class MainActivity extends AppCompatActivity implements MainActivityView 
     private AlertDialog alertDialog;
     private Vibrator v;
     private List<CVSFile> listRecords = new ArrayList<>();
-
 
 
     @Override
@@ -171,8 +177,11 @@ public class MainActivity extends AppCompatActivity implements MainActivityView 
     protected void onResume() {
         super.onResume();
 
-        mPresenter.updateAll();
+        //mPresenter.updateAll();
+        //mPresenter.threadGetDataFiles();
     }
+
+
 
     @Override
     protected void onRestart() {
@@ -276,6 +285,11 @@ public class MainActivity extends AppCompatActivity implements MainActivityView 
     @Override
     public void setVoltageText(String text) {
         tvVoltage.setText(text);
+    }
+
+    @Override
+    public void setBatteryCapacityText(String text) {
+        tvBatteryCapacityMAH.setText(text);
     }
 
     @Override

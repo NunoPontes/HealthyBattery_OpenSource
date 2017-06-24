@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Healthy Battery</string>
     <string name="definitions">Definitions</string>
-    <string name="main">Main</string>
+    <string name="main" translatable="false">Main</string>
     <string name="temperature">Temperature:</string>
     <string name="status">Status:</string>
     <string name="c" translatable="false">ºC</string>
@@ -14,6 +14,7 @@
     <string name="health">Health:</string>
     <string name="technology">Technology:</string>
     <string name="voltage">Voltage:</string>
+    <string name="batteryCapacityMAH">Battery Capacity:</string>
     <string name="notification_when_battery_is">Notification when battery is:</string>
     <string name="vibrate">Vibrate</string>
     <string name="charging">Charging</string>

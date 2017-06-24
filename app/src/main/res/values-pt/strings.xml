@@ -52,4 +52,5 @@
     <string name="tip4">Manter a bateria entre 30% e 80%</string>
     <string name="tip5">Manter o telemóvel entre -20ºC (-4F) e 45ºC (113F)</string>
     <string name="tip6">Não usar carregadores de marcas diferentes da do fabricante do telemóvel</string>
+    <string name="batteryCapacityMAH">"Capacidade da Bateria: "</string>
 </resources>

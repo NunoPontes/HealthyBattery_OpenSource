@@ -271,6 +271,27 @@
                             android:textAppearance="?android:attr/textAppearanceSmall"/>
                     </TableRow>
 
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="bottom">
+
+                        <TextView
+                            android:id="@+id/tvBatteryCapacityMAH1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/batteryCapacityMAH"
+                            android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+                        <TextView
+                            android:id="@+id/tvBatteryCapacityMAH"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:textAlignment="viewEnd"
+                            android:textAppearance="?android:attr/textAppearanceSmall"/>
+                    </TableRow>
+
                 </TableLayout>
 
                 <com.jjoe64.graphview.GraphView
